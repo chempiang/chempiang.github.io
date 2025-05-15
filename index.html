@@ -206,7 +206,7 @@
         <div id="page7" class="hidden">
             <h1>Almost There! Clue #7</h1>
             <img class="birthday-image" src="5tahun.jpg" alt="Detective">
-            <h1>Aleena Zara Four Years Old</h1>
+            <h1>Aleena Zara Five Years Old</h1>
 
             <div class="clue">
                 <p>
@@ -222,27 +222,8 @@
             </div>
         </div>
 
-        <!-- Page 6 -->
-        <div id="page8" class="hidden">
-            <h1>Almost There! Clue #8</h1>
-            <img class="birthday-image" src="6tahun.jpg" alt="Detective">
-            <h1>Aleena Zara Five Years Old</h1>
-
-            <div class="clue">
-                <p>
-                    Now, quickly find MyMelody !!!!!!!!<br>
-                </p>
-            </div>
-            <div class="code-input">
-                <p>Enter the code you found:</p>
-                <input type="text" id="code8" placeholder="">
-                <br>
-                <button onclick="checkCode(7)">Unlock Next Clue</button>
-            </div>
-        </div>
-
         <!-- Page 6 - Final Page -->
-        <div id="page9" class="hidden">
+        <div id="page8" class="hidden">
             <h1>🎉 HAPPY BIRTHDAY NUR ALEENA ZARA! 🎉</h1>
             <img class="birthday-image" src="semua.jpg" alt="Birthday cake">
             <div class="clue">
@@ -268,8 +249,7 @@
             4: "ROBLOX",   // Code hidden in laundry
             5: "MIXUE",    // Code hidden in bedroom
             6: "ORANGE",    // Code hidden in bedroom
-            7: "BLACKPINK",    // Code hidden in bedroom
-            7: "KUROMI"    // Code hidden in bedroom
+            7: "BLACKPINK"
         };
 
         function checkCode(pageNumber) {
@@ -284,7 +264,7 @@
                 document.getElementById(`page${pageNumber + 1}`).classList.remove('hidden');
                 
                 // If it's the final page, create confetti
-                if (pageNumber === 8) {
+                if (pageNumber === 7) {
                     createConfetti();
                 }
             } else {
