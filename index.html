@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Treasure Hunt!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffebf3;
+            text-align: center;
+            padding: 20px;
+            color: #d23369;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(210, 51, 105, 0.2);
+        }
+        h1 {
+            color: #d23369;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .clue {
+            font-size: 1.5em;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fff9fc;
+            border-radius: 10px;
+            border: 2px dashed #d23369;
+        }
+        .code-input {
+            margin: 20px 0;
+        }
+        input {
+            padding: 10px 15px;
+            font-size: 1.2em;
+            border: 2px solid #d23369;
+            border-radius: 8px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        button {
+            background-color: #d23369;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b52a5a;
+        }
+        .hidden {
+            display: none;
+        }
+        .birthday-image {
+            max-width: 300px;
+            margin: 20px auto;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            border-radius: 50%;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% { top: -10px; opacity: 1; }
+            100% { top: 100vh; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Page 1 - Welcome -->
+        <div id="page1">
+            <h1>Happy Birthday, Nur Aleena Zara! 🎉</h1>
+            <img class="birthday-image" src="kuromicake.jpg" alt="Birthday cake">
+            <p>Welcome to your special birthday treasure hunt!</p>
+            <p>You need to find hidden codes around the house to unlock the next clues.</p>
+            <p>Are you ready for an adventure?</p>
+            <div class="clue">
+                <p>
+                    Your first clue is where you start your day,<br>
+                    It is the place where you brush your teeth everyday<br>
+                </p>
+            </div>
+            <div class="code-input">
+                <p>Enter the code you found:</p>
+                <input type="text" id="code1" placeholder="">
+                <br>
+                <button onclick="checkCode(1)">Unlock Next Clue</button>
+            </div>
+        </div>
+
+        <!-- Page 2 -->
+        <div id="page2" class="hidden">
+            <h1>Great Job! Clue #2</h1>
+
+            <img class="birthday-image" src="0tahun.jpg" alt="Treasure map">
+            <h1>Zara One Month After Born !!</h1>
+            <div class="clue">
+                <p>
+                    Next you'll look where Mama cooks meals and foods,<br>
+                    It is the place where it is hot and dangerous !!<br>
+                    Your next code is waiting there!
+                </p>
+            </div>
+            <div class="code-input">
+                <p>Enter the code you found:</p>
+                <input type="text" id="code2" placeholder="">
+                <br>
+                <button onclick="checkCode(2)">Unlock Next Clue</button>
+            </div>
+        </div>
+
+        <!-- Page 3 -->
+        <div id="page3" class="hidden">
+            <h1>Awesome! Clue #3</h1>
+            <img class="birthday-image" src="1tahun.jpg" alt="Magnifying glass">
+            <h1>Zara One Year Old</h1>
+            <div class="clue">
+                <p>
+                    Now go where books and stories live,<br>
+                    I guess a monkey with big mouth is waiting for you<br>
+                </p>
+            </div>
+            <div class="code-input">
+                <p>Enter the code you found:</p>
+                <input type="text" id="code3" placeholder="">
+                <br>
+                <button onclick="checkCode(3)">Unlock Next Clue</button>
+            </div>
+        </div>
+
+        <!-- Page 4 -->
+        <div id="page4" class="hidden">
+            <h1>You're Halfway There! Clue #4</h1>
+            <img class="birthday-image" src="2tahun.jpg" alt="Pirate treasure">
+            <h1>Zara Nonosh Two Years Old</h1>
+            <div class="clue">
+                <p>
+                    Now search a device which Papa and Mama always play a restaurant,<br>
+                    It is a white color with two controllers
+                </p>
+            </div>
+            <div class="code-input">
+                <p>Enter the code you found:</p>
+                <input type="text" id="code4" placeholder="">
+                <br>
+                <button onclick="checkCode(4)">Unlock Next Clue</button>
+            </div>
+        </div>
+
+        <!-- Page 5 -->
+        <div id="page5" class="hidden">
+            <h1>Almost There! Clue #5</h1>
+            <img class="birthday-image" src="3tahun.jpg" alt="Detective">
+            <h1>Zara April Three Years Old</h1>
+
+            <div class="clue">
+                <p>
+                    Next is where Papa sleeps,<br>
+                    Could it be thing that Papa hugs??<br>
+                    There's your code, now go, go, go!
+                </p>
+            </div>
+            <div class="code-input">
+                <p>Enter the code you found:</p>
+                <input type="text" id="code5" placeholder="">
+                <br>
+                <button onclick="checkCode(5)">Unlock Next Clue</button>
+            </div>
+        </div>
+
+        <!-- Page 6 -->
+        <div id="page6" class="hidden">
+            <h1>Almost There! Clue #6</h1>
+            <img class="birthday-image" src="4tahun.jpg" alt="Detective">
+            <h1>Aleena Zara Four Years Old</h1>
+
+            <div class="clue">
+                <p>
+                    Next is where we eat together everyday,<br>
+                    A place where loooots of foods are served
+                </p>
+            </div>
+            <div class="code-input">
+                <p>Enter the code you found:</p>
+                <input type="text" id="code6" placeholder="">
+                <br>
+                <button onclick="checkCode(6)">Unlock Next Clue</button>
+            </div>
+        </div>
+
+        <!-- Page 6 -->
+        <div id="page7" class="hidden">
+            <h1>Almost There! Clue #7</h1>
+            <img class="birthday-image" src="5tahun.jpg" alt="Detective">
+            <h1>Aleena Zara Four Years Old</h1>
+
+            <div class="clue">
+                <p>
+                    Next is where Papa work everyday<br>
+                    Find at a music instruments which produce some nice music
+                </p>
+            </div>
+            <div class="code-input">
+                <p>Enter the code you found:</p>
+                <input type="text" id="code7" placeholder="">
+                <br>
+                <button onclick="checkCode(7)">Unlock Next Clue</button>
+            </div>
+        </div>
+
+        <!-- Page 6 - Final Page -->
+        <div id="page8" class="hidden">
+            <h1>🎉 HAPPY BIRTHDAY NUR ALEENA ZARA! 🎉</h1>
+            <img class="birthday-image" src="semua.jpg" alt="Birthday cake">
+            <div class="clue">
+                <p>
+                    You've solved all the clues, you're sooooooo smart!<br>
+                    Papa, Mama and Sofea love you !!
+                   <br>
+                    
+                </p>
+            </div>
+            <p>
+                Now kiss Papa, Mama and Sofea and you will get your final suprise !!!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Define the correct codes for each page
+        const correctCodes = {
+            1: "SOFEA",    // Code hidden in bathroom
+            2: "APRIL",    // Code hidden in kitchen
+            3: "IPOH",   // Code hidden in bookshelf
+            4: "ROBLOX",   // Code hidden in laundry
+            5: "MIXUE",    // Code hidden in bedroom
+            6: "ORANGE",    // Code hidden in bedroom
+            7: "BLACKPINK"    // Code hidden in bedroom
+        };
+
+        function checkCode(pageNumber) {
+            const inputElement = document.getElementById(`code${pageNumber}`);
+            const userCode = inputElement.value.trim().toUpperCase();
+            
+            if (userCode === correctCodes[pageNumber]) {
+                // Hide current page
+                document.getElementById(`page${pageNumber}`).classList.add('hidden');
+                
+                // Show next page
+                document.getElementById(`page${pageNumber + 1}`).classList.remove('hidden');
+                
+                // If it's the final page, create confetti
+                if (pageNumber === 7) {
+                    createConfetti();
+                }
+            } else {
+                alert("That's not the right code. Keep searching!");
+                inputElement.value = "";
+                inputElement.focus();
+            }
+        }
+
+        function createConfetti() {
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = getRandomColor();
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                document.body.appendChild(confetti);
+            }
+        }
+
+        function getRandomColor() {
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+</body>
+</html>
